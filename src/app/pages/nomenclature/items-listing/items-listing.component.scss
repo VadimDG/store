@@ -1,0 +1,91 @@
+:host {
+
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: relative;
+
+    table {
+        width: 100%;
+        height: calc(100% - 40px);
+
+        .system-status {
+            mat-icon {
+                &.selected {
+                    color: green;
+                }
+            }
+        }
+
+        .working-status {
+
+            span {
+                box-sizing: border-box;
+                padding: 5px 16px;
+                gap: 10px;
+
+                display: block;
+                
+                height: 24px;
+                border-radius: 4px;
+                flex: none;
+                order: 0;
+                flex-grow: 0;
+
+                font-weight: 700;
+                font-size: 14px;
+                line-height: 16px;
+            }
+
+            .working-status-new {
+                background: #EEEDEA;
+                border: 1px solid #8C8B85;
+                width: 60px;
+            }
+            .working-status-updated {
+                background: #C7B0FA;
+                border: 1px solid #42058A;
+                width: 80px;
+            }
+            .working-status-ready-for-processing {
+                background: #4B4A8C;
+                border: 1px solid #4B4A8C;
+                width: 172px;
+                color: #FFFFFF;
+            }
+            .working-status-send-for-processing {
+                background: #DAEFF7;
+                border: 1px solid #0B96CC;
+                width: 167px;
+            }
+            .working-status-processed-with-warning {
+                background: #FDF1E8;
+                border: 1px solid #EA7315;
+                width: 191px;
+            }
+            .working-status-processed-with-error {
+                background: #FDEAEA;
+                border: 1px solid #EA302D;
+                width: 168px;
+                
+            }
+            .working-status-processed {
+                background: #EBF5DE;
+                border: 1px solid #46A610;
+                width: 99px;
+                height: 24px;
+            }
+        }
+    }
+
+    mat-paginator {
+        position: absolute;
+        width: inherit;
+        bottom: 0;
+        height: 40px;
+    }
+
+    app-filtering {
+        position: fixed;
+    }
+}

@@ -1,0 +1,2 @@
+export const LISTING_ITEMS_HEADERS = ['select', 'systemStatus', 'id', 'name', 'workingStatus', 'dateCreated', 'dateUpdated'];
+export const LISTING_ITEMS_HEADERS_DYNAMIC = ['id', 'name', 'dateCreated', 'dateUpdated'];

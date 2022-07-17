@@ -1,0 +1,83 @@
+<div class="wrapper">
+</div>
+<div class="filter-form">
+    <div class="title">
+        <div class="filter-caption">
+            <mat-icon>filter_list</mat-icon>
+            <h1>Filtering</h1>
+        </div>
+        
+        <mat-icon class="close-icon">close</mat-icon>
+    </div>
+    <div class="content">
+        <h2>ITEM ID</h2>
+        <div class="field-block">
+            <mat-icon>search</mat-icon>
+            <input placeholder="Search products by item ID here..." type="text" />
+        </div>
+
+        <h2>Partner ID</h2>
+        <div class="field-block">
+            <mat-icon>search</mat-icon>
+            <input placeholder="Search products by Partner ID here..." type="text" />
+        </div>
+
+        <h2>STATUS</h2>
+        <div class="statuses">
+            <mat-chip-list>
+                <mat-chip [class.isSelected]="status.isSelected" *ngFor="let status of statuses" (click)="selectStatus(status)">
+                    {{status.value | capitalizeValues | splitWordByCapitalLetters}}
+                </mat-chip>
+            </mat-chip-list>
+        </div>
+
+        <h2>DATE OF CREATION</h2>
+        <div class="date-fields">
+            <div class="date-field">
+                <label>from</label>
+                <div class="element">
+                    <input matInput [matDatepicker]="pickerCreateFrom">
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matSuffix [for]="pickerCreateFrom"></mat-datepicker-toggle>
+                    <mat-datepicker #pickerCreateFrom></mat-datepicker>
+                </div>
+
+                <label>to</label>
+                <div class="element">
+                    <input matInput [matDatepicker]="pickerCreateTo">
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matSuffix [for]="pickerCreateTo"></mat-datepicker-toggle>
+                    <mat-datepicker #pickerCreateTo></mat-datepicker>
+                </div>
+            </div>
+        </div>
+
+        <h2>DATE OF UPDATE</h2>
+        <div class="date-fields">
+            <div class="date-field">
+                <label>from</label>
+                <div class="element">
+                    <input matInput [matDatepicker]="pickerUpdateFrom">
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matSuffix [for]="pickerUpdateFrom"></mat-datepicker-toggle>
+                    <mat-datepicker #pickerUpdateFrom></mat-datepicker>
+                </div>
+
+                <label>to</label>
+                <div class="element">
+                    <input matInput [matDatepicker]="pickerUpdateTo">
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matSuffix [for]="pickerUpdateTo"></mat-datepicker-toggle>
+                    <mat-datepicker #pickerUpdateTo></mat-datepicker>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="buttons">
+            <button mat-raised-button>Cancel</button>
+            <button mat-raised-button color="primary">Apply Filters</button>
+        </div>
+    </footer>
+</div>
